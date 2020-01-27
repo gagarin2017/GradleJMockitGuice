@@ -3,12 +3,27 @@
  */
 package GradleJMockitGuice;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
+        /*
+         * Guice.createInjector() takes your Modules, and returns a new Injector
+         * instance. Most applications will call this method exactly once, in their
+         * main() method.
+         */
+        Injector injector = Guice.createInjector(new BillingModule());
+    
+        /*
+         * Now that we've got the injector, we can build objects.
+         */
+        BillingService billingService = injector.getInstance(BillingService.class);
+
+        System.out.println(billingService.about());
+      }
 }
