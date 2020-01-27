@@ -29,6 +29,8 @@ dependencies {
 
     // Use JUnit Jupiter Engine for testing.
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
+
+    testCompile "org.jmockit:jmockit:1.49"
 }
 
 application {
@@ -39,4 +41,8 @@ application {
 test {
     // Use junit platform for unit tests
     useJUnitPlatform()
+}
+
+test {
+    jvmArgs "-javaagent:${classpath.find { it.name.contains("jmockit") }.absolutePath}"
 }

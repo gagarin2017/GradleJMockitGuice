@@ -5,10 +5,14 @@ package GradleJMockitGuice;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import mockit.Tested;
 
 class AppTest {
+
+    @Tested
+    public App classUnderTest;
+
     @Test void appHasAGreeting() {
-        App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 }
