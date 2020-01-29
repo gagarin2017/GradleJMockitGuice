@@ -7,10 +7,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
-
+	
     public static void main(String[] args) {
         /*
          * Guice.createInjector() takes your Modules, and returns a new Injector

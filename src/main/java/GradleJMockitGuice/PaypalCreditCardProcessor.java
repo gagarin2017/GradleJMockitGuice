@@ -1,9 +1,9 @@
 package GradleJMockitGuice;
 
 public class PaypalCreditCardProcessor implements CreditCardProcessor {
-	
+
 	@Override
-	public String toString() {
+	public String about() {
 		return "PaypalCreditCardProcessor";
 	}
 

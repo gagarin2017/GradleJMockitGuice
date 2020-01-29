@@ -13,7 +13,7 @@ class BillingService {
 	}
 	
 	public String about() {
-		return "Billing Service use Credit Card Process [" + processor + "], and Transaction Log: [" + transactionLog +"]";
+		return "Billing Service use Credit Card Process [" + processor.about() + "], and Transaction Log: [" + transactionLog.about() +"]";
 	}
 
 }
